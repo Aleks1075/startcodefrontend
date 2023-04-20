@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Qoute from "./components/Quote";
+import Profile from "./components/Profile";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About user={user} />} />
         <Route path="/quote" element={<Qoute user={user} />} />
+        <Route path="/profile" element={<Profile user={user} />} />
       </Routes>
       {!loggedIn ? (<LogIn login={login} />) :
         (<div>

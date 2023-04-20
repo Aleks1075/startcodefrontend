@@ -1,13 +1,19 @@
 import React from 'react';
-import NewQuote from './NewQuote';
 
 const Profile = ({ user }) => {
+  const isLoggedIn = user && user.roles;
+
   return (
     <div>
-      <h1>Profile</h1>
-      <h2>Username: {user.username}</h2>
-      <h2>Role: {user.roles}</h2>
-      <NewQuote user={user} />
+      {isLoggedIn ? (
+        <>
+          <h1>Profile</h1>
+          <h2>Username: {user.username}</h2>
+          <h2>Role: {user.roles}</h2>
+        </>
+      ) : (
+        <p>Please log in to view your profile.</p>
+      )}
     </div>
   );
 };
